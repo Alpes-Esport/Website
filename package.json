@@ -1,21 +1,62 @@
 {
 	"name": "alpesesport-website",
+	"description": "Website of the Alpes Esport association.",
+	"author": {
+		"name": "Mathis Serrieres Maniecki",
+		"email": "contact@minarox.fr",
+		"url": "https://minarox.fr/"
+	},
+	"bugs": {
+		"url": "https://github.com/Alpes-Esport/Website/issues",
+		"email": "contact@minarox.fr"
+	},
+	"homepage": "https://alpes-esport.fr",
+	"readme": "./README.md",
+	"license": "AGPL-3.0-only",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Alpes-Esport/Website.git"
+	},
+	"private": true,
 	"type": "module",
-	"version": "0.0.1",
+	"version": "2.0.0",
 	"scripts": {
 		"dev": "astro dev",
+		"check": "astro check",
 		"build": "astro build",
+		"test": "vitest run --coverage",
+		"coverage": "astro preview --root ./coverage",
 		"preview": "astro build && wrangler dev",
-		"astro": "astro",
 		"deploy": "astro build && wrangler deploy",
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
+		"@astrojs/check": "^0.9.4",
 		"@astrojs/cloudflare": "^12.6.9",
-		"astro": "^5.13.10"
+		"@astrojs/sitemap": "^3.6.0",
+		"@iconify-json/fa6-brands": "^1.2.6",
+		"astro": "^5.13.10",
+		"astro-compressor": "^1.1.2",
+		"astro-font": "^1.1.0",
+		"astro-icon": "^1.1.5",
+		"astro-meta-tags": "^0.4.0",
+		"astro-seo": "^0.8.4",
+		"sass": "^1.93.1",
+		"typescript": "^5.9.2"
 	},
 	"devDependencies": {
 		"@types/node": "^24.5.2",
+		"@vitest/coverage-v8": "3.2.4",
+		"vitest": "^3.2.4",
 		"wrangler": "^4.38.0"
+	},
+	"packageManager": "pnpm@10.17.0",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild",
+			"sharp",
+			"workerd"
+		]
 	}
 }
