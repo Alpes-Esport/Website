@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Banner from "@components/Banner.astro"
+import Table from "@components/Table.astro"
+import Translations from "@assets/json/translations.json"
+import CEC_Banner from "@assets/img/carousel/cec/1.webp"
+import LOL_Logo from "@assets/img/games/logo/league-of-legends.webp"
+import LOL_Banner from "@assets/img/games/banner/league-of-legends.webp"
+import LOL_Ranking from "@assets/json/cec/1/league-of-legends.json"
+import type { GameInterface } from "@types"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const lol: GameInterface = {
+    name: "League of Legends",
+    logo: LOL_Logo,
+    banner: LOL_Banner
+}
+---
+
+<Layout title={translation.tournaments.CEC[1]!.name}>
+    <Banner title={translation.tournaments.CEC[1]!.name} image={CEC_Banner} />
+
+    <div>
+        <article id="presentation" class="content">
+            <h2>{translation.presentation}</h2>
+            <p>{translation.tournaments.CEC[1]!.presentation}</p>
+        </article>
+
+        <Table game={lol} data={LOL_Ranking} />
+    </div>
+</Layout>
+
+<style lang="scss">
+    #presentation {
+        padding-top: 1rem;
+    }
+</style>

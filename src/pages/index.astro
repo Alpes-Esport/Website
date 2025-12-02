@@ -1,11 +1,207 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets"
+import Layout from "@layouts/Layout.astro"
+import Banner from "@assets/img/carousel/alpine-rivals/3.webp"
+import Contact from "@components/home/Contact.astro"
+import Description from "@components/home/Description.astro"
+import Numbers from "@components/home/Numbers.astro"
+import Members from "@components/home/Members.astro"
+import Timeline from "@components/home/Timeline.astro"
+import Tournaments from "@components/Tournaments.astro"
+import Translations from "@assets/json/translations.json"
+import CEC1 from "@assets/img/tournaments/cec/1.webp"
+import CEC2 from "@assets/img/tournaments/cec/2.webp"
+import CEC3 from "@assets/img/tournaments/cec/3.webp"
+import CEC4 from "@assets/img/tournaments/cec/4.webp"
+import CEC5 from "@assets/img/tournaments/cec/5.webp"
+import CGW2019 from "@assets/img/tournaments/cgw-2019.webp"
+import type { TournamentsInterface } from "@types"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const tournaments: TournamentsInterface = {
+    title: translation.tournaments.previous,
+    links: [
+        {
+            name: translation.tournaments.CEC[5]!.name,
+            url: "/tournament/CEC/5",
+            thumbnail: CEC5
+        },
+        {
+            name: translation.tournaments.CEC[4]!.name,
+            url: "/tournament/CEC/4",
+            thumbnail: CEC4
+        },
+        {
+            name: translation.tournaments.CEC[3]!.name,
+            url: "/tournament/CEC/3",
+            thumbnail: CEC3
+        },
+        {
+            name: translation.tournaments.CGW2019.name,
+            url: "/tournament/CGW-2019",
+            thumbnail: CGW2019
+        },
+        {
+            name: translation.tournaments.CEC[2]!.name,
+            url: "/tournament/CEC/2",
+            thumbnail: CEC2
+        },
+        {
+            name: translation.tournaments.CEC[1]!.name,
+            url: "/tournament/CEC/1",
+            thumbnail: CEC1
+        }
+    ]
+}
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={translation.home}>
+    <h1>Alpes Esport</h1>
+
+    <a id="banner" href="https://play.toornament.com/fr/tournaments/8261200481331421184/">
+        <Image src={Banner} alt={translation.tournaments.AlpineRivals[3]!.name} />
+    </a>
+
+    <Tournaments data={tournaments} />
+
+    <div id="association">
+        <Description />
+        <Numbers />
+        <Members />
+        <Timeline />
+    </div>
+
+    <Contact id="contact" />
 </Layout>
+
+<style lang="scss">
+    main > article:nth-child(3) {
+        padding-top: 20px;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    #banner {
+        max-height: 700px;
+        min-height: 450px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+            z-index: -1;
+            // @include box-shadow(
+            //     inset 0 120px 200px 0 var(--bg-color),
+            //     inset 0 -100px 50px -40px var(--bg-color)
+            // );
+            bottom: 0;
+            content: "";
+            height: calc(100% + 2px);
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: -1px;
+        }
+
+        > img {
+            z-index: -1;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        > article {
+            width: 65%;
+            min-width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media screen and (max-width: 680px) {
+                min-width: unset;
+                width: 100%;
+                justify-content: center;
+            }
+
+            > section {
+                z-index: 2;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                gap: 4px;
+
+                @media screen and (max-width: 680px) {
+                    align-items: center;
+                    text-align: center;
+                }
+
+                &:first-of-type {
+                    position: relative;
+
+                    @media screen and (min-width: 681px) {
+                        &::before {
+                            background: rgb(38, 38, 38);
+                            background: radial-gradient(
+                                circle,
+                                rgba(38, 38, 38, 1) 0%,
+                                rgba(252, 70, 107, 0) 60%
+                            );
+                            content: "";
+                            height: calc(100% + 300px);
+                            left: -150px;
+                            position: absolute;
+                            top: -150px;
+                            width: calc(100% + 300px);
+                            z-index: -1;
+                        }
+                    }
+
+                    p {
+                        font-family: var(--title-font);
+                        font-size: clamp(25px, 3vw, 57px);
+                        font-weight: bold;
+                        position: relative;
+                        text-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
+                        text-transform: uppercase;
+                    }
+
+                    a {
+                        margin: 20px 0 0;
+                        padding: 8px 30px;
+                        width: max-content;
+
+                        svg {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    aspect-ratio: 1/1;
+                    width: 30%;
+                    min-width: 200px;
+                    max-width: 360px;
+                    border-radius: 8px;
+                    overflow: hidden;
+
+                    @media screen and (max-width: 680px) {
+                        display: none;
+                    }
+
+                    video {
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+</style>

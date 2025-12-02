@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets"
+import Layout from "@layouts/Layout.astro"
+import Banner from "@components/Banner.astro"
+import Table from "@components/Table.astro"
+import Translations from "@assets/json/translations.json"
+import CEC_Banner from "@assets/img/carousel/cec/2.webp"
+import CoeurChartreuse from "@assets/img/sponsors/coeur-de-chartreuse.webp"
+import SaintLaurentDuPont from "@assets/img/sponsors/saint-laurent-du-pont.webp"
+import RocketBaguette from "@assets/img/sponsors/rocket-baguette.webp"
+import InovaConstruction from "@assets/img/sponsors/inova-construction.webp"
+import InovConcept from "@assets/img/sponsors/inov-concept.webp"
+import RL_Logo from "@assets/img/games/logo/rocket-league.webp"
+import RL_Banner from "@assets/img/games/banner/rocket-league.webp"
+import RL_Ranking from "@assets/json/cec/4/rocket-league.json"
+import type { GameInterface } from "@types"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const rl: GameInterface = {
+    name: "Rocket League",
+    logo: RL_Logo,
+    banner: RL_Banner
+}
+---
+
+<Layout title={translation.tournaments.CEC[4]!.name}>
+    <Banner title={translation.tournaments.CEC[4]!.name} image={CEC_Banner} />
+
+    <div class="banner-content">
+        <article id="sponsors" class="content">
+            <Image src={CoeurChartreuse} alt="Coeur de Chartreuse" />
+            <Image src={SaintLaurentDuPont} alt="Saint Laurent du Pont" />
+            <Image src={RocketBaguette} alt="Rocket Baguette" />
+            <Image src={InovaConstruction} alt="Inova Construction" />
+            <Image src={InovConcept} alt="Inov' Concept" />
+        </article>
+
+        <article id="presentation" class="content">
+            <h2>{translation.presentation}</h2>
+            <p>{translation.tournaments.CEC[4]!.presentation}</p>
+        </article>
+
+        <Table game={rl} data={RL_Ranking} />
+    </div>
+</Layout>

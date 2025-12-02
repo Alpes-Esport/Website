@@ -1,0 +1,60 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Banner from "@components/Banner.astro"
+import Cashprize from "@components/Cashprize.astro"
+import Translations from "@assets/json/translations.json"
+import CEC_Banner from "@assets/img/carousel/cec/6.webp"
+import LOL_Logo from "@assets/img/games/logo/league-of-legends.webp"
+import LOL_Banner from "@assets/img/games/banner/league-of-legends.webp"
+import Valo_Logo from "@assets/img/games/logo/valorant.webp"
+import Valo_Banner from "@assets/img/games/banner/valorant.webp"
+import RL_Logo from "@assets/img/games/logo/rocket-league.webp"
+import RL_Banner from "@assets/img/games/banner/rocket-league.webp"
+import type { CashprizeInterface } from "@types"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const cashprize: CashprizeInterface[] = [
+    {
+        game: {
+            name: "League of Legends",
+            logo: LOL_Logo,
+            banner: LOL_Banner
+        },
+        cash: 675,
+        regulation: "https://docs.google.com/document/d/1GKTMMvaYPcfDy1wIB-k-9XGlAZJDDmcS",
+        registration: "https://challonge.com/fr/CEC6_LOL",
+    },
+    {
+        game: {
+            name: "Valorant",
+            logo: Valo_Logo,
+            banner: Valo_Banner
+        },
+        cash: 675,
+        regulation: "https://docs.google.com/document/d/1AIX7Drj1b6Y4aFXMzGPjQqqxvk9Gfa0w",
+        registration: "https://challonge.com/fr/CEC6_VALORANT"
+    },
+    {
+        game: {
+            name: "Rocket League",
+            logo: RL_Logo,
+            banner: RL_Banner
+        },
+        cash: 405,
+        regulation: "https://docs.google.com/document/d/1T-a3IJQHkku3cZ4GjiQPRTKs7T-52SLw",
+        registration: "https://challonge.com/fr/CEC6_RL",
+    }
+]
+---
+
+<Layout title={translation.tournaments.CEC[6]!.name}>
+    <Banner title={translation.tournaments.CEC[6]!.name} image={CEC_Banner} />
+
+    <article id="presentation" class="content">
+        <h2>{translation.presentation}</h2>
+        <p>{translation.tournaments.CEC[6]!.presentation}</p>
+    </article>
+
+    <Cashprize data={cashprize} />
+</Layout>

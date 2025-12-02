@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets"
+import Layout from "@layouts/Layout.astro"
+import Banner from "@components/Banner.astro"
+import Table from "@components/Table.astro"
+import Translations from "@assets/json/translations.json"
+import CGW2029 from "@assets/img/tournaments/cgw-2019.webp"
+import Transfo from "@assets/img/sponsors/transfo.webp"
+import FrenchTechInTheAlps from "@assets/img/sponsors/la-french-tech-in-the-alps.webp"
+import Casemate from "@assets/img/sponsors/casemate.webp"
+import CSGO_Logo from "@assets/img/games/logo/counter-strike.webp"
+import CSGO_Banner from "@assets/img/games/banner/counter-strike.webp"
+import CSGO_Ranking from "@assets/json/cgw-2019/counter-strike.json"
+import type { GameInterface } from "@types"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const csgo: GameInterface = {
+    name: "Counter Strike: Global Offensive",
+    logo: CSGO_Logo,
+    banner: CSGO_Banner
+}
+---
+
+<Layout title={translation.tournaments.CGW2019.name}>
+    <Banner title={translation.tournaments.CGW2019.name} image={CGW2029} />
+
+    <div class="banner-content">
+        <article id="sponsors" class="content">
+            <Image src={Transfo} alt="Transfo" />
+            <Image src={FrenchTechInTheAlps} alt="La French Tech In The Alps" />
+            <Image src={Casemate} alt="Casemate" />
+        </article>
+
+        <article id="presentation" class="content">
+            <h2>{translation.presentation}</h2>
+            <p>{translation.tournaments.CGW2019.presentation}</p>
+        </article>
+
+        <Table game={csgo} data={CSGO_Ranking} />
+    </div>
+</Layout>

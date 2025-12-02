@@ -1,30 +1,31 @@
-import type { APIRoute } from 'astro'
+import type { APIRoute } from "astro"
 
 export const prerender = false
 
 // Get synced data
 export const GET: APIRoute = async ({ request, locals, site }) => {
-    const key = request.headers.get('x-api-key')
+    const key = request.headers.get("x-api-key")
     if (locals.runtime.env.SYNC_KEY && key === locals.runtime.env.SYNC_KEY) {
+        const data = await locals.runtime.env.STORE.getWithMetadata(['TWITCH_LIVESTREAM'], { type: "json" })
         return new Response(JSON.stringify({
-            'TWITCH_LIVESTREAM': await locals.runtime.env.STORE.getWithMetadata('TWITCH_LIVESTREAM', { type: 'json' }) || null
+            "TWITCH_LIVESTREAM": data.get('TWITCH_LIVESTREAM') || null
         }), {
             status: 200,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { "Content-Type": "application/json" }
         })
     }
 
     // Redirect to website by default
-    return Response.redirect(site?.origin || 'https://alpes-esport.fr', 301)
+    return Response.redirect(site?.origin || "https://alpes-esport.fr", 301)
 }
 
 // Sync data
 export const POST: APIRoute = async ({ request, locals, site }) => {
-    const key = request.headers.get('x-api-key')
+    const key = request.headers.get("x-api-key")
     if (locals.runtime.env.SYNC_KEY && key === locals.runtime.env.SYNC_KEY) {
         // Check if tokens are set
         if (!locals.runtime.env.TWITCH_USER || !locals.runtime.env.TWITCH_CLIENT_ID || !locals.runtime.env.TWITCH_CLIENT_SECRET) {
-            return new Response('Environment variables not set', { status: 500 })
+            return new Response("Environment variables not set", { status: 500 })
         }
 
         const errors: string[] = []
@@ -32,36 +33,36 @@ export const POST: APIRoute = async ({ request, locals, site }) => {
 
         // Twitch
         const getTwitchToken = async () => {
-            const request = await fetch('https://id.twitch.tv/oauth2/token', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            const request = await fetch("https://id.twitch.tv/oauth2/token", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams({
                     client_id: locals.runtime.env.TWITCH_CLIENT_ID,
                     client_secret: locals.runtime.env.TWITCH_CLIENT_SECRET,
-                    grant_type: 'client_credentials'
+                    grant_type: "client_credentials"
                 })
             })
             const result: any = await request.json()
             if (request.status !== 200) throw new Error(`Twitch Token API returned status ${request.status}`)
 
             const data = result.access_token
-            if (!data) throw new Error('No data found')
-            else await locals.runtime.env.STORE.put('TWITCH_TOKEN', data, { metadata: { updatedAt: new Date().toISOString() } })
+            if (!data) throw new Error("No data found")
+            else await locals.runtime.env.STORE.put("TWITCH_TOKEN", data, { metadata: { updatedAt: new Date().toISOString() } })
         }
 
         const getTwitchLive = async () => {
             try {
-                let twitchToken = await locals.runtime.env.STORE.get('TWITCH_TOKEN') ?? ''
+                let twitchToken = await locals.runtime.env.STORE.get("TWITCH_TOKEN") ?? ''
                 if (!twitchToken) {
                     twitchTokenRenewed = true
                     await getTwitchToken()
-                    twitchToken = await locals.runtime.env.STORE.get('TWITCH_TOKEN') ?? ''
+                    twitchToken = await locals.runtime.env.STORE.get("TWITCH_TOKEN") ?? ''
                 }
 
                 const request = await fetch(`https://api.twitch.tv/helix/streams?user_login=${locals.runtime.env.TWITCH_USER}`, {
                     headers: {
-                        'Client-ID': locals.runtime.env.TWITCH_CLIENT_ID,
-                        'Authorization': `Bearer ${twitchToken}`
+                        "Client-ID": locals.runtime.env.TWITCH_CLIENT_ID,
+                        "Authorization": `Bearer ${twitchToken}`
                     }
                 })
                 if (request.status === 401 && !twitchTokenRenewed) {
@@ -74,7 +75,7 @@ export const POST: APIRoute = async ({ request, locals, site }) => {
                     if (request.status !== 200) throw new Error(`Twitch API returned status ${request.status}`)
 
                     const data = result.data?.[0] || {}
-                    await locals.runtime.env.STORE.put('TWITCH_LIVESTREAM', JSON.stringify(data), { metadata: { updatedAt: new Date().toISOString() } })
+                    await locals.runtime.env.STORE.put("TWITCH_LIVESTREAM", JSON.stringify(data), { metadata: { updatedAt: new Date().toISOString() } })
                 }
             }
             catch (e: any) {
@@ -88,12 +89,12 @@ export const POST: APIRoute = async ({ request, locals, site }) => {
 
         // Return errors if any
         if (errors.length) {
-            return new Response(errors.join('\n'), { status: 500 })
+            return new Response(errors.join("\n"), { status: 500 })
         }
 
-        return new Response('OK', { status: 200 })
+        return new Response("OK", { status: 200 })
     }
 
     // Redirect to website by default
-	return Response.redirect(site?.origin || 'https://alpes-esport.fr', 301)
+	return Response.redirect(site?.origin || "https://alpes-esport.fr", 301)
 }

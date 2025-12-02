@@ -1,22 +1,340 @@
+---
+import { join } from "node:path"
+import { SEO } from "astro-seo"
+import { AstroFont } from "astro-font"
+import { ClientRouter } from "astro:transitions"
+import LanguageSelection from "@components/LanguageSelection.astro"
+import Header from "@layouts/Header.astro"
+import Footer from "@layouts/Footer.astro"
+import Translations from "@assets/json/translations.json"
+import Banner from "@assets/img/banner.webp"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const site = Astro.site ?? new URL("https://alpes-esport.fr")
+const title = "Alpes Esport"
+const customTitle = Astro.props.title as string | undefined
+let fullTitle = title
+if (customTitle) {
+	fullTitle = `${customTitle} | ${title}`
+}
+const fontPrefix = import.meta.env.PROD
+	? site.toString() || ''
+	: join(process.cwd(), "public")
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<SEO
+			title={fullTitle}
+			description={translation.description}
+			charset="UTF-8"
+			openGraph={{
+				basic: {
+					title,
+					type: "website",
+					url: site.origin,
+					image: Banner.src
+				},
+				optional: {
+					locale,
+				},
+				image: {
+					alt: `${title} banner`,
+					url: Banner.src,
+					type: "image/webp"
+				}
+			}}
+			twitter={{
+				creator: `@Minarox_`,
+				card: "summary_large_image",
+				site: site.origin,
+				title,
+				description: translation.description,
+				image: Banner.src,
+				imageAlt: `${title} banner`,
+			}}
+			extend={{
+				link: [
+					{ rel: "icon", href: "/favicon/favicon-dark.ico", media: "(prefers-color-scheme:light)" },
+					{ rel: "icon", href: "/favicon/favicon-light.ico", media: "(prefers-color-scheme:dark)" },
+					{ rel: "icon", href: "/favicon/favicon.ico", media: "(prefers-color-scheme:default)" },
+					{ rel: "icon", type: "image/png", href: "/favicon/android-chrome-192x192.png", sizes: "192x192" },
+					{ rel: "icon", type: "image/png", href: "/favicon/android-chrome-512x512.png", sizes: "512x512" },
+					{ rel: "apple-touch-icon", type: "image/png", href: "/favicon/apple-touch-icon.png", sizes: "180x180" },
+					{ rel: "icon", type: "image/png", href: "/favicon/favicon-32x32.png", sizes: "32x32" },
+					{ rel: "icon", type: "image/png", href: "/favicon/favicon-16x16.png", sizes: "16x16" },
+					{ rel: "manifest", href: "/favicon/site.webmanifest" },
+					{ rel: "sitemap", href: "/sitemap-index.xml" },
+				],
+				meta: [
+					{ name: "viewport", content: "width=device-width, initial-scale=1.0" },
+					{ name: "theme-color", content: "#1A1A1A" },
+					{ name: "keywords", content: "Chartreuse, Gaming, Alpes, Événements, Sport, Esport, Events, Lan, Compétitions, Jeux-vidéos, Jeux, Vidéos, Joueurs, FPS, Prix, Cash, Prize, Prix, Classement, Victoire, Grenoble, Isère, France" },
+					{ name: "robots", content: "index, follow" },
+					{ name: "language", content: locale },
+					{ name: "author", content: "Mathis Serrieres Maniecki" }
+				]
+			}}
+		/>
+
+		<AstroFont
+			config={[
+				{
+					name: "Open Sans",
+					src: [],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "sans-serif",
+					fetch: true,
+					verbose: true,
+					cacheDir: ".astro/font-cache",
+					googleFontsURL: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+				},
+				{
+					name: "Lemon Milk",
+					src: [
+						{
+							style: "medium",
+							weight: "500",
+							path: join(fontPrefix, "fonts", "LemonMilk-Medium.woff2")
+						},
+						{
+							style: "bold",
+							weight: "700",
+							path: join(fontPrefix, "fonts", "LemonMilk-Bold.woff2")
+						}
+					],
+					preload: true,
+					display: "swap",
+					selector: "body",
+					fallback: "sans-serif"
+				}
+			]}
+		/>
+
+		<ClientRouter />
 	</head>
 	<body>
-		<slot />
+		<LanguageSelection />
+
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+
+<style lang="scss" is:global>
+	:root {
+		--bg-color: rgb(26, 26, 26);
+		--bg-color-alt: rgb(24, 29, 51);
+		--text-color: #ffffff;
+		--subtext-color: #e6e6e6;
+		--footer-text-color: #b9b9b9;
+		--special-color: rgb(205, 79, 74);
+		--special-color-alt: rgb(173, 54, 44);
+
+		--title-font: "Lemon Milk", "Georgia", "Arial", sans-serif;
+		--text-font: "Open Sans", "Helvetica", "Arial", sans-serif;
+	}
+
+	::-webkit-scrollbar {
+		width: 14px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		box-shadow: inset 0 0 14px 14px white;
+		border: solid 4px transparent;
+		border-radius: 14px;
+	}
+
+	::-webkit-scrollbar-button {
+		display: none;
+	}
+
+	* {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-family: var(--text-font);
+	}
+
+	body {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		min-height: 100vh;
+		overflow-x: hidden;
+		overflow-y: overlay;
+		color: var(--text-color);
+		background-color: var(--bg-color);
+
+		main:first-of-type {
+			margin-top: -90px;
+		}
+
+		img {
+			-webkit-user-drag: none;
+			-khtml-user-drag: none;
+			-moz-user-drag: none;
+			-o-user-drag: none;
+			user-drag: none;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: var(--title-font);
+			text-transform: uppercase;
+		}
+
+		h2 {
+			font-size: 1.6em;
+			margin-bottom: 20px;
+		}
+	}
+
+	.content {
+		width: min(100% - 2rem, 1350px);
+		margin-inline: auto;
+		padding: 40px 0;
+	}
+
+	.btn {
+		margin-inline: auto;
+		padding: 8px 16px;
+		width: 180px;
+		display: block;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+		background-color: var(--special-color-alt);
+		box-shadow: rgba(0, 0, 0, 0.15) 0 8px 16px 0;
+		border-radius: 8px;
+		transition: transform 150ms;
+		transform: scale(1);
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		@media only screen and (max-width: 450px) {
+			width: 100% !important;
+			padding: 10px 12px !important;
+		}
+	}
+
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.35s ease;
+	}
+
+	.fade-enter-from,
+	.fade-leave-to {
+		opacity: 0;
+	}
+
+	.splide .splide__pagination {
+		bottom: 40px !important;
+		gap: 6px;
+
+		.splide__pagination__page {
+			background: var(--text-color) !important;
+			opacity: 1;
+			padding: 5px !important;
+			margin: 0 4px;
+
+			&.is-active {
+				background: var(--special-color) !important;
+			}
+		}
+	}
+
+	.banner-content {
+		position: sticky;
+		margin-top: -120px;
+	}
+
+	#teaser {
+		text-align: center;
+		border-radius: 6px;
+
+		iframe {
+			border-radius: 6px;
+		}
+	}
+
+	#presentation {
+		padding-bottom: 1rem;
+		text-align: justify;
+
+		p {
+			font-size: 1.05em;
+		}
+	}
+
+	#sponsors {
+		padding: 1rem;
+		width: min(100% - 2rem, 1100px);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 30px;
+		background-color: var(--bg-color-alt);
+		border-radius: 8px;
+		box-shadow: rgba(0, 0, 0, 0.4) 0 8px 24px 0;
+
+		@media (max-width: 650px) {
+			width: 100%;
+		}
+
+		img {
+			max-width: 150px;
+			max-height: 110px;
+			padding: 8px;
+
+			@media only screen and (max-width: 650px) {
+				max-width: 120px;
+				max-height: 90px;
+			}
+		}
+	}
+
+	#ranking {
+		display: flex;
+		gap: 0 2rem;
+		padding: 0;
+		margin-bottom: -1rem;
+
+		@media (max-width: 950px) {
+			flex-direction: column;
+			width: 100%;
+			margin-bottom: unset;
+		}
+	}
+
+	@media only screen and (max-width: 650px) {
+		h2 {
+			text-align: center;
+		}
 	}
 </style>

@@ -1,3 +1,33 @@
+import type { ImageMetadata } from "astro"
+
+export interface GameInterface {
+	name: string,
+	logo: ImageMetadata,
+	banner: ImageMetadata
+}
+
+export interface TeamInterface {
+	rank: number,
+	name: string,
+	players: string[]
+}
+
+export interface CashprizeInterface {
+	game: GameInterface,
+	cash: number,
+	regulation?: string,
+	registration?: string
+}
+
+export interface TournamentsInterface {
+	title: string,
+	links: {
+		name: string,
+		url: string,
+		thumbnail: ImageMetadata
+	}[]
+}
+
 export interface TwitchLivestream {
 	id: string
 	user_id: string,
@@ -23,4 +53,3 @@ export function decodeHTMLEntities(text: string): string {
 		.replace(/&quot;/g, '"')
 		.replace(/&apos;/g, "'")
 }
-/*  */

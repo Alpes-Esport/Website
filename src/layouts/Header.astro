@@ -1,0 +1,390 @@
+---
+import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components"
+import Translations from "@assets/json/translations.json"
+import Logo from "@assets/svg/logo.svg"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+---
+
+<header>
+    <article>
+        <section>
+            <!-- Logo -->
+            <a id="logo" href="/">
+                <Image src={Logo} alt={translation.logo} />
+            </a>
+
+            <!-- Navigation -->
+            <nav>
+                <Icon name={"mdi:hamburger-menu"} />
+                <div class="appear">
+                    <div>
+                        <a href="/" class="current">{translation.home}</a>
+                        <a id="dropdown" href="">
+                            {translation.tournaments.self}
+                            <Icon name={"mdi:arrow-down-drop"} />
+
+                            <div>
+                                <a href="/tournament/alpine-rivals/3">{translation.tournaments.AlpineRivals[3]!.name}</a>
+                                <a href="/tournament/alpine-rivals/2">{translation.tournaments.AlpineRivals[2]!.name}</a>
+                                <a href="/tournament/alpine-rivals/1">{translation.tournaments.AlpineRivals[1]!.name}</a>
+                                <a href="/tournament/cec">{translation.tournaments.CEC[0]!.name}</a>
+                                <a href="/tournament/cgw-2019">{translation.tournaments.CGW2019.name}</a>
+                            </div>
+                        </a>
+                        <a href="/#association">{translation.association.self[0]}</a>
+                        <a href="/#contact">{translation.contact}</a>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Réseaux sociaux -->
+        <section>
+            <a href="https://discord.gg/invite/ENY2nV6" title="Discord">
+                <Icon name={"fa6-brands:discord"} />
+            </a>
+            <a href="https://twitch.tv/alpesesport" title="Twitch">
+                <Icon name={"fa6-brands:twitch"} />
+            </a>
+            <a href="https://youtube.com/@AlpesEsport" title="YouTube">
+                <Icon name={"fa6-brands:youtube"} />
+            </a>
+            <a href="https://x.com/AlpesEsport" title="X">
+                <Icon name={"fa6-brands:x-twitter"} />
+            </a>
+            <a href="https://instagram.com/alpes_esport" title="Instagram">
+                <Icon name={"fa6-brands:instagram"} />
+            </a>
+            <a href="https://facebook.com/AlpesEsport" title="Facebook">
+                <Icon name={"fa6-brands:facebook"} />
+            </a>
+        </section>
+    </article>
+</header>
+
+<script>
+    import { actions } from "astro:actions"
+
+    // Fetch Twitch livestream data from the server action
+    const twitchElement = document.querySelector('a[title="Twitch"]')!
+    const livestreamData = await actions.getTwitchLivestream.orThrow()
+    const isLive = Object.keys(livestreamData || {}).length > 0
+
+    if (isLive) {
+        twitchElement.classList.add("on-air")
+    }
+</script>
+
+<style lang="scss">
+    $header-height: 90px;
+
+    .scroll {
+        // @include box-shadow(inset 0 100px 90px -100px var(--bg-color));
+        backdrop-filter: blur(8px);
+        background-color: rgba(38, 38, 38, 0.6);
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 200ms ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+
+    .appear {
+        opacity: 1 !important;
+        pointer-events: unset !important;
+        user-focus: unset !important;
+        user-select: unset !important;
+    }
+
+    header {
+        height: $header-height;
+        left: 0;
+        position: sticky;
+        top: 0;
+        transition: all 600ms;
+        z-index: 99;
+
+        article {
+            align-items: center;
+            display: flex;
+            height: inherit;
+            justify-content: space-between;
+            margin-inline: auto;
+            width: min(100% - 1rem, 1650px);
+
+            section {
+                align-items: center;
+                display: flex;
+                height: inherit;
+
+                a {
+                    align-items: center;
+                    color: var(--text-color);
+                    display: inline-flex;
+                    font-family: var(--title-font);
+                    font-weight: bold;
+                    height: $header-height;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    section:first-of-type nav {
+        #mobile {
+            display: none;
+            height: $header-height;
+            padding: 0 1.4rem;
+            width: 2em;
+        }
+
+        #dropdown {
+            position: relative;
+
+            div {
+                background-color: var(--bg-color);
+                border-radius: 8px;
+                top: 68px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+                    0 6px 6px rgba(0, 0, 0, 0.23);
+                display: flex;
+                flex-flow: column nowrap;
+                left: 4px;
+                position: absolute;
+                width: max-content;
+
+                a {
+                    font-size: 0.94em;
+                    height: max-content;
+                    padding: 0.5rem 1rem;
+
+                    &:first-of-type {
+                        padding-top: 1rem;
+                    }
+
+                    &:last-of-type {
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+        }
+
+        a {
+            padding: 1.2rem;
+            transition: color 150ms;
+
+            svg {
+                margin-left: 0.6rem;
+                padding-bottom: 6px;
+            }
+
+            &:hover {
+                color: var(--special-color);
+
+                svg {
+                    color: var(--special-color);
+                    transition: color 150ms;
+                }
+            }
+        }
+    }
+
+    section:last-of-type > a {
+        padding: 1rem;
+
+        & > svg {
+            height: 20px;
+            transform: scale(1);
+            transition: all 150ms;
+        }
+
+        &:hover {
+            svg {
+                color: var(--subtext-color);
+                transform: scale(1.1);
+            }
+        }
+
+        &.on-air {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 13px;
+                right: 11px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: var(--btn-color);
+            }
+
+            &::after {
+                animation: pulse-scale 2.6s infinite;
+            }
+
+            @keyframes pulse-scale {
+                0% {
+                    opacity: 0.7;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(2.4);
+                }
+            }
+        }
+    }
+
+    .current {
+        color: var(--special-color);
+
+        svg {
+            color: var(--special-color);
+        }
+    }
+
+    #logo {
+        align-items: center;
+        display: inline-flex;
+        height: $header-height;
+        justify-content: center;
+        padding: 1rem;
+
+        img {
+            height: 56px;
+            transform: scale(1);
+            transition: transform 200ms;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+
+    .livestream {
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 30px;
+            right: 13px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #f00000;
+        }
+
+        i:last-of-type {
+            animation: pulse-scale 2.6s infinite;
+        }
+
+        @keyframes pulse-scale {
+            0% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2.4);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1080px) {
+        section:first-of-type {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        section:last-of-type {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        section:first-of-type > nav > div {
+            opacity: 0;
+            pointer-events: none;
+            user-select: none;
+            user-focus: none;
+            background-color: rgba(38, 38, 38, 0.9);
+            z-index: -1;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            transition: opacity 200ms ease-in-out;
+
+            & > div {
+                position: absolute;
+                height: calc(100% - $header-height);
+                width: 100%;
+                top: $header-height;
+                left: 0;
+                font-size: 1.5em;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                overflow-y: overlay;
+
+                span {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                a {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                }
+
+                #dropdown {
+                    width: 100%;
+                    justify-content: center;
+
+                    div {
+                        height: max-content;
+                        flex-flow: column nowrap;
+                        align-items: center;
+                        top: 74px;
+                        left: 0;
+                        border-radius: 0;
+                        width: 100vw;
+
+                        a {
+                            text-align: center;
+                            padding: 1rem 0.8rem;
+
+                            &:first-of-type {
+                                padding-top: 2rem;
+                            }
+
+                            &:last-of-type {
+                                padding-bottom: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #mobile {
+            display: block !important;
+        }
+    }
+</style>

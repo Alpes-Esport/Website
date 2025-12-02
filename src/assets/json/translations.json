@@ -1,414 +1,470 @@
 {
     "en": {
+        "description": "Organizer of eSports events in Chartreuse since 2016.",
         "home": "Home",
+        "logo": "Alpes Esport logo",
+        "games": "Games",
+        "presentation": "Presentation",
+        "registration": "Registration",
+        "regulation": "Regulation",
+        "ranking": "Ranking",
+        "contact": "Contact",
+        "copyright": "All rights reserved",
         "tournaments": {
             "self": "Tournaments",
             "previous": "Our previous tournaments",
             "editions": "The editions",
-            "Alpine_Rivals": {
-                "self": "Alpine Rivals",
-                "1": {
-                    "self": "Alpine Rivals #1",
-                    "date": "29th June 2024 ",
+            "AlpineRivals": [
+                {
+                    "name": "Alpine Rivals"
+                },
+                {
+                    "name": "Alpine Rivals #1",
+                    "date": "29th June 2024",
                     "presentation": "Dive into the heart of the action with the first chapter of Alpes Esport. The program features an electric atmosphere and over-vitaminized cars. Don't miss our first Rocket League online tournament, on Saturday June 29, 2024. Swiss round format, 3vs3 and a €200 cashprize!"
                 },
-                "2": {
-                    "self": "Alpine Rivals #2",
+                {
+                    "name": "Alpine Rivals #2",
                     "date": "21 Septembre 2024",
                     "presentation": "Alpes Esport is back with a second edition of Alpine Rivals, featuring a game never before seen in our tournaments. This time, you'll have to plant the SPIKE! Don't miss our new online competition on Valorant, on Saturday September 21, 2024, with 16 teams of 5 players for a total cashprize of €300!"
                 },
-                "3": {
-                    "self": "Alpine Rivals #3",
+                {
+                    "name": "Alpine Rivals #3",
                     "date": "09 - 10 November 2024",
                     "presentation": "Dive into the heart of the action with the third chapter of Alpes Esport. The program features an electric atmosphere in the Summoner's Rift. Don't miss our first League Of Legends online tournament, on Saturday November 9 and Sunday November 10, 2024 (check-in at 12.30 p.m. on Saturday and Sunday. For approximate end time, see the rules). Swiss round format, 5vs5 and a €300 cashprize!"
                 }
-            },
-            "CEC": {
-                "self": "Chartreuse Esport Contest",
-                "presentation": "Before founding Chartreuse Gaming, its founding members regularly got together for Lan parties. Over time, the desire to play turned into the desire to organize for others. Thus, the Chartreuse Esport Contest tournament was born in October 2016. Since this first edition with modest ambitions and mainly intended for the locals, the association decided to redouble its efforts to put on the map of France, Isère and its commitment to the development of eSport.\n\nTranslated with www.DeepL.com/Translator (free version)",
-                "1": {
-                    "self": "Chartreuse Esport Contest 1",
+            ],
+            "CEC": [
+                {
+                    "name": "Chartreuse Esport Contest",
+                    "presentation": "Before founding Chartreuse Gaming, its founding members regularly got together for Lan parties. Over time, the desire to play turned into the desire to organize for others. Thus, the Chartreuse Esport Contest tournament was born in October 2016. Since this first edition with modest ambitions and mainly intended for the locals, the association decided to redouble its efforts to put on the map of France, Isère and its commitment to the development of eSport."
+                },
+                {
+                    "name": "Chartreuse Esport Contest 1",
                     "date": "28th October 2017 ",
                     "presentation": "The association organized its first League Of Legends event in 5vs5 on October 28, 2017, with a rather modest ambition. 5 teams responded and the best of them shared the €150 cashprize."
                 },
-                "2": {
-                    "self": "Chartreuse Esport Contest 2",
+                {
+                    "name": "Chartreuse Esport Contest 2",
                     "date": "20th October 2018",
                     "presentation": "The association renewed its first event and made it its flagship event. This second edition took place on October 20, 2018. This edition welcomed 8 teams, on League Of Legends in 5vs5, for a global cashprize of 400€."
                 },
-                "3": {
-                    "self": "Chartreuse Esport Contest 3",
+                {
+                    "name": "Chartreuse Esport Contest 3",
                     "date": "26 - 27th October 2019",
                     "presentation": "In its momentum, the association decided to diversify its event by offering League Of Legends and Rocket League at the third edition on October 26 and 27, 2019. League Of Legends had a great event with 16 fierce teams, present to share a cashprize of 1000€ while Rocket League had an encouraging start with 11 teams, coming from all over France for a cashprize of 400€."
                 },
-                "4": {
-                    "self": "Chartreuse Esport Contest 4 Online",
+                {
+                    "name": "Chartreuse Esport Contest 4 Online",
                     "date": "25th October 2020",
                     "presentation": "Due to the health crisis, regulatory and legal measures, the association had no choice but to dematerialize its fourth edition by favoring Rocket League over Counter Strike: Global Offensive and League Of Legends. This edition was entirely distributed by Rocket Baguette and had 32 slots for a cashprize of 450€."
                 },
-                "5": {
-                    "self": "Chartreuse Esport Contest 5",
+                {
+                    "name": "Chartreuse Esport Contest 5",
                     "date": "24th October 2021",
                     "presentation": "After a pivotal year and a situation in half-tone, the association took the bet to renew its edition under the format of LAN by proposing for the first time three of the most played games on the competitive scene: Counter Strike: Global Offensive, League Of Legends and Rocket League. 98 players answered present on the three games to share a cashprize size XXL, of 3500€!"
                 },
-                "6": {
-                    "self": "Chartreuse Esport Contest 6",
+                {
+                    "name": "Chartreuse Esport Contest 6",
                     "date": "15th and 29th October 2022",
-                    "presentation": "For a flamboyant return, the association proposes a two-phase event on three games: League Of Legends, Rocket League and Valorant. The first phase, qualifying, will take place online on Saturday, October 15, 2022. As for the second phase, the final, it will be held in the Gaming House \"Grenoble Esport\". A generous cashprize of more than 1500,00€ will be shared between the last fighters of the arena.\n\nTranslated with www.DeepL.com/Translator (free version)"
+                    "presentation": "For a flamboyant return, the association proposes a two-phase event on three games: League Of Legends, Rocket League and Valorant. The first phase, qualifying, will take place online on Saturday, October 15, 2022. As for the second phase, the final, it will be held in the Gaming House \"Grenoble Esport\". A generous cashprize of more than 1500,00€ will be shared between the last fighters of the arena."
                 }
-            },
-            "CGW_2019": {
-                "self": "Chartreuse Gaming Winter 2019",
+            ],
+            "CGW2019": {
+                "name": "Chartreuse Gaming Winter 2019",
                 "date": "26th January 2019",
                 "presentation": "During a winter too long for the taste of some, the association proposed a 2vs2 tournament on Counter Strike: Global Offensive during an evening on January 26, 2019 with a final prize of 200€."
             }
         },
         "association": {
-            "self": "Association | The association",
-            "logo": "Logo of the association",
-            "presentation": {
-                "1": "Welcome to the world of Alpes Esport, an association under the law of 1901 founded by a team of enthusiasts, united by a common vision: to shape the future of French Esport.",
-                "2": "With experience gained under the Chartreuse Gaming association's colors since 2017 with Chartreuse Gaming Contest #1, its members can testify to no fewer than 11 physical and online tournaments in the space of 7 years, 450 participants and a cashprize exceeding €6500 / €7500.",
-                "3": "Since 2015, members have been striving to take part in the eSport boom and establish themselves as key local players in the Alps. To achieve this, the association aims to organize several events a year in the Grenoble metropolis.",
-                "4": "Propelled by a pool of exceptional skills and (with the conviction that Esport has a greater role to play)/(firmly believing in the transformative power of Esport), the association aims to leave a lasting mark on the world of Esport.",
-                "5": "Immerse yourself in the constantly evolving world of Alpes Esport, a pioneering association. Let's keep up our efforts, energize our fabulous region and help France shine on the international stage."
-            },
-            "numbers": {
-                "tournament": "tournaments organized",
-                "since-2017": "since 2017",
-                "up-to": "Up to",
-                "more-than": "More than",
-                "players": "players gathered",
-                "cashprize": "of cashprize"
-            },
-            "members": {
-                "self": "The members of the association",
-                "head-office": "Head office members",
-                "president": "President",
-                "vice-president": "Vice President",
-                "secretary": "Secretary"
-            },
-            "timeline": {
-                "2024": {
-                    "1": {
-                        "title": "Alpine Rivals #1",
-                        "description": "June 29, 2024 online on Rocket League."
-                    },
-                    "2": {
-                        "title": "Alpine Rivals #2",
-                        "description": "September 21, 2024 online on Valorant."
-                    },
-                    "3": {
-                        "title": "Alpine Rivals #3",
-                        "description": "September 09 - 10, 2024 online on League Of Legends."
-                    }
+            "self": ["Association", "The association"],
+            "presentation": [
+                "Welcome to the world of Alpes Esport, an association under the law of 1901 founded by a team of enthusiasts, united by a common vision: to shape the future of French Esport.",
+                "With experience gained under the Chartreuse Gaming association's colors since 2017 with Chartreuse Gaming Contest #1, its members can testify to no fewer than 11 physical and online tournaments in the space of 7 years, 450 participants and a cashprize exceeding €6500 / €7500.",
+                "Since 2015, members have been striving to take part in the eSport boom and establish themselves as key local players in the Alps. To achieve this, the association aims to organize several events a year in the Grenoble metropolis.",
+                "Propelled by a pool of exceptional skills and (with the conviction that Esport has a greater role to play) / (firmly believing in the transformative power of Esport), the association aims to leave a lasting mark on the world of Esport.",
+                "Immerse yourself in the constantly evolving world of Alpes Esport, a pioneering association. Let's keep up our efforts, energize our fabulous region and help France shine on the international stage."
+            ],
+            "members": "The members of the association",
+            "headOffice": "Head office members",
+            "president": "President",
+            "vicePresident": "Vice President",
+            "secretary": "Secretary",
+            "contactUs": "Contact us",
+            "joinUs": "Join us !",
+            "tournament": "tournaments organized",
+            "since2017": "since 2017",
+            "upTo": "Up to",
+            "moreThan": "More than",
+            "players": "players gathered",
+            "cashprize": "of cashprize",
+            "history": "History",
+            "timeline": [
+                {
+                    "year": 2024,
+                    "isBig": true,
+                    "entries": [
+                        {
+                            "title": "Alpine Rivals #1",
+                            "description": "June 29, 2024 online on Rocket League."
+                        },
+                        {
+                            "title": "Alpine Rivals #2",
+                            "description": "September 21, 2024 online on Valorant."
+                        },
+                        {
+                            "title": "Alpine Rivals #3",
+                            "description": "September 09 - 10, 2024 online on League Of Legends."
+                        }
+                    ]
                 },
-                "2023": {
-                    "1": {
-                        "title": "Name change",
-                        "description": "Chartreuse Gaming association changes its name to Alpes Esport."
-                    }
+                {
+                    "year": 2023,
+                    "isBig": true,
+                    "entries": [
+                        {
+                            "title": "Name change",
+                            "description": "Chartreuse Gaming association changes its name to Alpes Esport."
+                        }
+                    ]
                 },
-                "2022": {
-                    "1": {
-                        "title": "Change of head office",
-                        "description": "On May 22, 2022 to Saint-Martin d'Hères by decision of the extraordinary general assembly."
-                    },
-                    "2": {
-                        "title": "FIFA tournament SOS Jeunes pousses",
-                        "description": "July 4, 2022 at the Maison de quartier Paul-Bert."
-                    },
-                    "3": {
-                        "title": "Chartreuse Esport Contest 6",
-                        "description": "October 15, 2022 online and October 29, 2022 live in the offices of Grenoble Esport."
-                    }
+                {
+                    "year": 2022,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Change of head office",
+                            "description": "On May 22, 2022 to Saint-Martin d'Hères by decision of the extraordinary general assembly."
+                        },
+                        {
+                            "title": "FIFA tournament SOS Jeunes pousses",
+                            "description": "July 4, 2022 at the Maison de quartier Paul-Bert."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 6",
+                            "description": "October 15, 2022 online and October 29, 2022 live in the offices of Grenoble Esport."
+                        }
+                    ]
                 },
-                "2021": {
-                    "1": {
-                        "title": "Campus Games Week",
-                        "description": "From 22 to 27 February 2021 on the Discord of the association."
-                    },
-                    "2": {
-                        "title": "Campus Games Week: Crous Edition",
-                        "description": "From May 17 to May 19, 2021 on the Discord of the association."
-                    },
-                    "3": {
-                        "title": "Chartreuse Esport Contest 5",
-                        "description": "October 24, 2021 at the Salle du Révol in Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2021,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Campus Games Week",
+                            "description": "From 22 to 27 February 2021 on the Discord of the association."
+                        },
+                        {
+                            "title": "Campus Games Week: Crous Edition",
+                            "description": "From May 17 to May 19, 2021 on the Discord of the association."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 5",
+                            "description": "October 24, 2021 at the Salle du Révol in Saint Laurent du Pont."
+                        }
+                    ]
                 },
-                "2020": {
-                    "1": {
-                        "title": "Salon du Jeu Vidéo of PAJ",
-                        "description": "February 1, 2020 at the Salle du Révol in Saint Laurent du Pont."
-                    },
-                    "2": {
-                        "title": "Chartreuse Esport Contest 4 Online",
-                        "description": "October 25, 2020 on the Discord of the association."
-                    }
+                {
+                    "year": 2020,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Salon du Jeu Vidéo of PAJ",
+                            "description": "February 1, 2020 at the Salle du Révol in Saint Laurent du Pont."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 4 Online",
+                            "description": "October 25, 2020 on the Discord of the association."
+                        }
+                    ]
                 },
-                "2019": {
-                    "1": {
-                        "title": "Chartreuse Gaming Winter",
-                        "description": "January 26, 2019 on the association's Discord."
-                    },
-                    "2": {
-                        "title": "Salon du Jeu Vidéo of PAJ",
-                        "description": "February 2, 2019 at the Saint Joseph de Rivière village hall."
-                    },
-                    "3": {
-                        "title": "Chartreuse Esport Contest 3",
-                        "description": "October 26 and 27, 2019 at the Salle du Révol in Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2019,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Chartreuse Gaming Winter",
+                            "description": "January 26, 2019 on the association's Discord."
+                        },
+                        {
+                            "title": "Salon du Jeu Vidéo of PAJ",
+                            "description": "February 2, 2019 at the Saint Joseph de Rivière village hall."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 3",
+                            "description": "October 26 and 27, 2019 at the Salle du Révol in Saint Laurent du Pont."
+                        }
+                    ]
                 },
-                "2018": {
-                    "1": {
-                        "title": "Chartreuse Esport Contest 2",
-                        "description": "October 20, 2018 at the Saint Joseph de Rivière village hall."
-                    },
-                    "2": {
-                        "title": "Salon du Jeu Vidéo of PAJ",
-                        "description": "January 20, 2018 at the Salle de la Priola in Miribel-les-Echelles."
-                    }
+                {
+                    "year": 2018,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Chartreuse Esport Contest 2",
+                            "description": "October 20, 2018 at the Saint Joseph de Rivière village hall."
+                        },
+                        {
+                            "title": "Salon du Jeu Vidéo of PAJ",
+                            "description": "January 20, 2018 at the Salle de la Priola in Miribel-les-Echelles."
+                        }
+                    ]
                 },
-                "2017": {
-                    "1": {
-                        "title": "Chartreuse Esport Contest 1",
-                        "description": "October 28, 2017 at the Maison des Associations in Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2017,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Chartreuse Esport Contest 1",
+                            "description": "October 28, 2017 at the Maison des Associations in Saint Laurent du Pont."
+                        }
+                    ]
                 },
-                "2015": {
-                    "1": {
-                        "title": "Creation of the association",
-                        "description": "December 29, 2015 at the Maison des Associations in Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2015,
+                    "isBig": true,
+                    "entries": [
+                        {
+                            "title": "Creation of the association",
+                            "description": "December 29, 2015 at the Maison des Associations in Saint Laurent du Pont."
+                        }
+                    ]
                 }
-            }
-        },
-        "contact": {
-            "self": "Contact",
-            "us": "Contact us",
-            "join-us": "Join us !"
-        },
-        "copyright": "All rights reserved",
-        "site-map": "Site Map",
-        "legal-info": "Legal information",
-        "intranet": "Intranet",
-        "load-more": "Load more",
-        "read-more": "Read more",
-        "games": "Games",
-        "registration": "Registration",
-        "regulation": "Regulation",
-        "presentation": "Presentation",
-        "ranking": "Ranking",
-        "gallery": "Gallery",
-        "cashprize": "Cashprize",
-        "description": "Organizer of eSports events in Chartreuse since 2016."
+            ]
+        }
     },
     "fr": {
+        "description": "Organisateur d'événements eSports en Chartreuse depuis 2016.",
         "home": "Accueil",
+        "logo": "Logo Alpes Esport",
+        "games": "Jeux",
+        "presentation": "Présentation",
+        "registration": "Inscription",
+        "regulation": "Règlement",
+        "ranking": "Classement",
+        "contact": "Contact",
+        "copyright": "Tous droits réservés",
         "tournaments": {
             "self": "Tournois",
             "previous": "Nos précédents tournois",
             "editions": "Les éditions",
-            "Alpine_Rivals": {
-                "self": "Alpine Rivals",
-                "1": {
-                    "self": "Alpine Rivals #1",
+            "AlpineRivals": [
+                {
+                    "name": "Alpine Rivals"
+                },
+                {
+                    "name": "Alpine Rivals #1",
                     "date": "29 Juin 2024",
                     "presentation": "Plongez au coeur de l'action avec le premier chapitre d'Alpes Esport. Au programme, une atmosphère électrique avec des voitures sur vitaminées. Ne manquez pas notre premier tournoi en ligne sur Rocket League, le samedi 29 juin 2024. Tournoi en format Swiss round, en 3vs3 et un cashprize de 200€ !"
                 },
-                "2": {
-                    "self": "Alpine Rivals #2",
+                {
+                    "name": "Alpine Rivals #2",
                     "date": "21 Septembre 2024",
                     "presentation": "Alpes Esport revient avec une seconde édition d'Alpine Rivals sur un jeu encore jamais vu dans nos tournois. Cette fois-ci, il faudra planter le SPIKE ! Ne manquez pas notre nouvelle compétition en ligne sur Valorant, le samedi 21 septembre 2024, avec 16 équipes de 5 joueurs pour un cashprize total de 300€ !"
                 },
-                "3": {
-                    "self": "Alpine Rivals #3",
+                {
+                    "name": "Alpine Rivals #3",
                     "date": "09 - 10 Novembre 2024",
                     "presentation": "Plongez au coeur de l'action avec le troisième chapitre d'Alpes Esport. Au programme, une atmosphère électrique au sein de la faille de l'invocateur. Ne manquez pas notre premier tournoi en ligne sur League Of Legends, le samedi 9 et le dimanche 10 novembre 2024 (check-in à 12 heures 30 le samedi et le dimanche. Pour l'heure de fin approximative, consultez le règlement). Tournoi en format Swiss round, en 5vs5 et un cashprize de 300€ !"
                 }
-            },
-            "CEC": {
-                "self": "Chartreuse Esport Contest",
-                "presentation": "Avant de fonder Chartreuse Gaming, ses membres fondateurs se réunissaient régulièrement pour des Lan party. Au fil du temps, l’envie de jouer se métamorphosa en l’envie d’organiser pour les autres. Ainsi, le tournoi Chartreuse Esport Contest vit le jour en octobre 2016. Depuis, cette première édition aux ambitions modestes et principalement destinée aux locaux, l’association décida de redoubler d’efforts pour mettre sur la carte de France, l’Isère et son engagement pour l’essor de l’eSport.",
-                "1": {
-                    "self": "Chartreuse Esport Contest 1",
+            ],
+            "CEC": [
+                {
+                    "name": "Chartreuse Esport Contest",
+                    "presentation": "Avant de fonder Chartreuse Gaming, ses membres fondateurs se réunissaient régulièrement pour des Lan party. Au fil du temps, l’envie de jouer se métamorphosa en l’envie d’organiser pour les autres. Ainsi, le tournoi Chartreuse Esport Contest vit le jour en octobre 2016. Depuis, cette première édition aux ambitions modestes et principalement destinée aux locaux, l’association décida de redoubler d’efforts pour mettre sur la carte de France, l’Isère et son engagement pour l’essor de l’eSport."
+                },
+                {
+                    "name": "Chartreuse Esport Contest 1",
                     "date": "28 Octobre 2017 ",
                     "presentation": "L’association organisa son premier événement sur League Of Legends en 5vs5, le 28 octobre 2017, avec une ambition plutôt modeste. 5 équipes répondirent présentes et les meilleures d’entre-elles se partagèrent le cashprize de 150€."
                 },
-                "2": {
-                    "self": "Chartreuse Esport Contest 2",
+                {
+                    "name": "Chartreuse Esport Contest 2",
                     "date": "20 Octobre 2018",
                     "presentation": "L’association renouvela son premier événement et en fit son événement phare. Cette seconde édition prit place le 20 octobre 2018. Cette édition accueillit 8 équipes, sur League Of Legends en 5vs5, pour un cashprize global de 400€."
                 },
-                "3": {
-                    "self": "Chartreuse Esport Contest 3",
+                {
+                    "name": "Chartreuse Esport Contest 3",
                     "date": "26 - 27 Octobre 2019",
                     "presentation": "Dans sa lancée, l’association décida de diversifier son événement en proposant du League Of Legends et du Rocket League lors de la troisième édition des 26 et 27 octobre 2019. League Of Legends connut un événement de taille avec 16 féroces équipes, présentes pour se partager un cashprize de 1000€ tandis que Rocket League connut des débuts encourageants avec 11 équipes, venues des quatre coins de l’hexagone pour un cashprize de 400€."
                 },
-                "4": {
-                    "self": "Chartreuse Esport Contest 4 Online",
+                {
+                    "name": "Chartreuse Esport Contest 4 Online",
                     "date": "25 Octobre 2020",
                     "presentation": "En raison de la crise sanitaire, des mesures réglementaires et légales, l’association n’eut d’autre choix que de dématérialiser sa quatrième édition en privilégiant Rocket League au profit de Counter Strike : Global Offensive et de League Of Legends. Cette édition fut intégralement diffusée par Rocket Baguette et compta 32 slots pour un cashprize de 450€."
                 },
-                "5": {
-                    "self": "Chartreuse Esport Contest 5",
+                {
+                    "name": "Chartreuse Esport Contest 5",
                     "date": "24 Octobre 2021",
                     "presentation": "Après une année charnière et une situation en demi-teinte, l’association prit le pari de renouveler son édition sous le format de LAN en proposant pour la première fois trois des jeux les plus joués sur la scène compétitive : Counter Strike : Global Offensive, League Of Legends et Rocket League. 98 joueurs répondirent présents sur les trois jeux pour se partager un cashprize taille XXL, de 3500€ !"
                 },
-                "6": {
-                    "self": "Chartreuse Esport Contest 6",
+                {
+                    "name": "Chartreuse Esport Contest 6",
                     "date": "15 et 29 Octobre 2022",
                     "presentation": "Pour un retour flamboyant, l’association vous propose un événement en deux phases sur trois jeux : League Of Legends, Rocket League et Valorant. La première phase, qualificative, se déroule en ligne le samedi 15 octobre 2022. Quant à la seconde phase, finale, elle se tiendra dans les locaux de la Gaming House « Grenoble Esport ». Un généreux cashprize de plus de 1500,00€ sera à se partager entre les derniers combattants de l’arène."
                 }
-            },
-            "CGW_2019": {
-                "self": "Chartreuse Gaming Winter 2019",
+            ],
+            "CGW2019": {
+                "name": "Chartreuse Gaming Winter 2019",
                 "date": "26 Janvier 2019",
                 "presentation": "Durant un hiver trop long au goût de certains, l’association proposa un tournoi 2vs2 sur Counter Strike : Global Offensive le temps d’une soirée le 26 janvier 2019 avec une dotation finale de 200€."
             }
         },
         "association": {
-            "self": "Association | L'association",
-            "logo": "Logo de l'association",
-            "presentation": {
-                "1": "Bienvenue dans l’univers d’Alpes Esport, une association loi 1901 fondée par une équipe de passionnés, unie par une vision commune : façonner l’avenir de l’Esport français.",
-                "2": "Fort d’une expérience passée sous les couleurs de l’association Chartreuse Gaming depuis 2017 avec le Chartreuse Gaming Contest #1, ses adhérents peuvent témoigner de pas moins de 11 tournois physiques et en ligne en l’espace de 7 années, de 450 participants et d’un cashprize excédant les 6500€ / 7500€.",
-                "3": "Depuis 2015, les adhérents s’efforcent de prendre part à l’essor de l’eSport et de s’inscrire comme des acteurs locaux incontournables dans les Alpes. Afin d’y parvenir, l’association a pour dessein d’organiser plusieurs événements par an dans la métropole grenobloise.",
-                "4": "Propulsée par un vivier de compétences exceptionnelles et (avec la conviction que l’Esport a un plus grand rôle à jouer)/(croyant fermement en la puissance transformative de l'Esport), l’association souhaite marquer le monde de l’Esport d’une empreinte durable.",
-                "5": "Ainsi, plongez dans l’univers en constante évolution d’Alpes Esport, une association pionnière. Poursuivons nos efforts, dynamisons notre fabuleuse région et tâchons de faire rayonner la France sur la scène internationale."
-            },
-            "numbers": {
-                "tournament": "tournois organisés",
-                "since-2017": "depuis 2017",
-                "up-to": "Jusqu'à",
-                "more-than": "Plus de",
-                "players": "joueurs réunis",
-                "cashprize": "de cashprize"
-            },
-            "members": {
-                "self": "Les membres de l'association",
-                "head-office": "Membres du siège",
-                "president": "Président",
-                "vice-president": "Vice-Président",
-                "secretary": "Secrétaire"
-            },
-            "timeline": {
-                "2024": {
-                    "1": {
-                        "title": "Alpine Rivals #1",
-                        "description": "Le 29 Juin 2024 en ligne sur Rocket League."
-                    },
-                    "2": {
-                        "title": "Alpine Rivals #2",
-                        "description": "Le 21 Septembre 2024 en ligne sur Valorant."
-                    },
-                    "3": {
-                        "title": "Alpine Rivals #3",
-                        "description": "Le 09 et 10 Novembre 2024 en ligne sur League Of Legends."
-                    }
+            "self": ["Association", "L'association"],
+            "presentation": [
+                "Bienvenue dans l’univers d’Alpes Esport, une association loi 1901 fondée par une équipe de passionnés, unie par une vision commune : façonner l’avenir de l’Esport français.",
+                "Fort d’une expérience passée sous les couleurs de l’association Chartreuse Gaming depuis 2017 avec le Chartreuse Gaming Contest #1, ses adhérents peuvent témoigner de pas moins de 11 tournois physiques et en ligne en l’espace de 7 années, de 450 participants et d’un cashprize excédant les 6500€ / 7500€.",
+                "Depuis 2015, les adhérents s’efforcent de prendre part à l’essor de l’eSport et de s’inscrire comme des acteurs locaux incontournables dans les Alpes. Afin d’y parvenir, l’association a pour dessein d’organiser plusieurs événements par an dans la métropole grenobloise.",
+                "Propulsée par un vivier de compétences exceptionnelles et (avec la conviction que l’Esport a un plus grand rôle à jouer)/(croyant fermement en la puissance transformative de l'Esport), l’association souhaite marquer le monde de l’Esport d’une empreinte durable.",
+                "Ainsi, plongez dans l’univers en constante évolution d’Alpes Esport, une association pionnière. Poursuivons nos efforts, dynamisons notre fabuleuse région et tâchons de faire rayonner la France sur la scène internationale."
+            ],
+            "members": "Les membres de l'association",
+            "headOffice": "Membres du siège",
+            "president": "Président",
+            "vicePresident": "Vice-Président",
+            "secretary": "Secrétaire",
+            "contactUs": "Contactez-nous",
+            "joinUs": "Rejoignez-nous !",
+            "tournament": "tournois organisés",
+            "since2017": "depuis 2017",
+            "upTo": "Jusqu'à",
+            "moreThan": "Plus de",
+            "players": "joueurs réunis",
+            "cashprize": "de cashprize",
+            "history": "Historique",
+            "timeline": [
+                {
+                    "year": 2024,
+                    "isBig": true,
+                    "entries": [
+                        {
+                            "title": "Alpine Rivals #1",
+                            "description": "Le 29 Juin 2024 en ligne sur Rocket League."
+                        },
+                        {
+                            "title": "Alpine Rivals #2",
+                            "description": "Le 21 Septembre 2024 en ligne sur Valorant."
+                        },
+                        {
+                            "title": "Alpine Rivals #3",
+                            "description": "Le 09 et 10 Novembre 2024 en ligne sur League Of Legends."
+                        }
+                    ]
                 },
-                "2023": {
-                    "1": {
-                        "title": "Changement de nom",
-                        "description": "L'association Chartreuse Gaming change de nom pour devenir Alpes Esport."
-                    }
+                {
+                    "year": 2023,
+                    "isBig": true,
+                    "entries": [
+                        {
+                            "title": "Changement de nom",
+                            "description": "L'association Chartreuse Gaming change de nom pour devenir Alpes Esport."
+                        }
+                    ]
                 },
-                "2022": {
-                    "1": {
-                        "title": "Changement du siège social",
-                        "description": "Le 22 mai 2022 vers Saint-Martin d’Hères par décision de l’assemblée générale extraordinaire."
-                    },
-                    "2": {
-                        "title": "Tournoi FIFA SOS Jeunes pousses",
-                        "description": "Le 4 juillet 2022 à la maison de quartier Paul-Bert."
-                    },
-                    "3": {
-                        "title": "Chartreuse Esport Contest 6",
-                        "description": "Le 15 Octobre 2022 en ligne et le 29 Octobre 2022 Octobre en phsique dans les locaux de Grenoble Esport."
-                    }
+                {
+                    "year": 2022,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Changement du siège social",
+                            "description": "Le 22 mai 2022 vers Saint-Martin d’Hères par décision de l’assemblée générale extraordinaire."
+                        },
+                        {
+                            "title": "Tournoi FIFA SOS Jeunes pousses",
+                            "description": "Le 4 juillet 2022 à la maison de quartier Paul-Bert."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 6",
+                            "description": "Le 15 Octobre 2022 en ligne et le 29 Octobre 2022 Octobre en phsique dans les locaux de Grenoble Esport."
+                        }
+                    ]
                 },
-                "2021": {
-                    "1": {
-                        "title": "Campus Games Week",
-                        "description": "Du 22 au 27 février 2021 sur le Discord de l’association."
-                    },
-                    "2": {
-                        "title": "Campus Games Week: Crous Edition",
-                        "description": "Du 17 mai au 19 mai 2021 sur le Discord de l’association."
-                    },
-                    "3": {
-                        "title": "Chartreuse Esport Contest 5",
-                        "description": "Le 24 octobre 2021 à la salle du Révol de Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2021,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Campus Games Week",
+                            "description": "Du 22 au 27 février 2021 sur le Discord de l’association."
+                        },
+                        {
+                            "title": "Campus Games Week: Crous Edition",
+                            "description": "Du 17 mai au 19 mai 2021 sur le Discord de l’association."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 5",
+                            "description": "Le 24 octobre 2021 à la salle du Révol de Saint Laurent du Pont."
+                        }
+                    ]
                 },
-                "2020": {
-                    "1": {
-                        "title": "Salon du Jeu Vidéo du PAJ",
-                        "description": "Le 1er février 2020 à la salle du Révol de Saint Laurent du Pont."
-                    },
-                    "2": {
-                        "title": "Chartreuse Esport Contest 4 Online",
-                        "description": "Le 25 octobre 2020 sur le Discord de l’association."
-                    }
+                {
+                    "year": 2020,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Salon du Jeu Vidéo du PAJ",
+                            "description": "Le 1er février 2020 à la salle du Révol de Saint Laurent du Pont."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 4 Online",
+                            "description": "Le 25 octobre 2020 sur le Discord de l’association."
+                        }
+                    ]
                 },
-                "2019": {
-                    "1": {
-                        "title": "Chartreuse Gaming Winter",
-                        "description": "Le 26 janvier 2019 sur le Discord de l’association."
-                    },
-                    "2": {
-                        "title": "Salon du Jeu Vidéo du PAJ",
-                        "description": "Le 2 février 2019 à la salle des fêtes de Saint Joseph de Rivière."
-                    },
-                    "3": {
-                        "title": "Chartreuse Esport Contest 3",
-                        "description": "Les 26 et 27 octobre 2019 à la salle du Révol de Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2019,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Chartreuse Gaming Winter",
+                            "description": "Le 26 janvier 2019 sur le Discord de l’association."
+                        },
+                        {
+                            "title": "Salon du Jeu Vidéo du PAJ",
+                            "description": "Le 2 février 2019 à la salle des fêtes de Saint Joseph de Rivière."
+                        },
+                        {
+                            "title": "Chartreuse Esport Contest 3",
+                            "description": "Les 26 et 27 octobre 2019 à la salle du Révol de Saint Laurent du Pont."
+                        }
+                    ]
                 },
-                "2018": {
-                    "1": {
-                        "title": "Chartreuse Esport Contest 2",
-                        "description": "Le 20 octobre 2018 à la salle des fêtes de Saint Joseph de Rivière."
-                    },
-                    "2": {
-                        "title": "Salon du Jeu Vidéo du PAJ",
-                        "description": "Le 20 janvier 2018 à la salle de la Priola à Miribel-les-Echelles."
-                    }
+                {
+                    "year": 2018,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Chartreuse Esport Contest 2",
+                            "description": "Le 20 octobre 2018 à la salle des fêtes de Saint Joseph de Rivière."
+                        },
+                        {
+                            "title": "Salon du Jeu Vidéo du PAJ",
+                            "description": "Le 20 janvier 2018 à la salle de la Priola à Miribel-les-Echelles."
+                        }
+                    ]
                 },
-                "2017": {
-                    "1": {
-                        "title": "Chartreuse Esport Contest 1",
-                        "description": "Le 28 octobre 2017 à la maison des associations à Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2017,
+                    "isBig": false,
+                    "entries": [
+                        {
+                            "title": "Chartreuse Esport Contest 1",
+                            "description": "Le 28 octobre 2017 à la maison des associations à Saint Laurent du Pont."
+                        }
+                    ]
                 },
-                "2015": {
-                    "1": {
-                        "title": "Création de l’association",
-                        "description": "Le 29 décembre 2015 à la maison des associations à Saint Laurent du Pont."
-                    }
+                {
+                    "year": 2015,
+                    "isBig": true,
+                    "entries": [
+                        {
+                            "title": "Création de l’association",
+                            "description": "Le 29 décembre 2015 à la maison des associations à Saint Laurent du Pont."
+                        }
+                    ]
                 }
-            }
-        },
-        "contact": {
-            "self": "Contact",
-            "us": "Nous contacter",
-            "join-us": "Rejoignez-nous !"
-        },
-        "copyright": "Tous droits réservés",
-        "site-map": "Plan du site",
-        "legal-info": "Mentions légales",
-        "intranet": "Intranet",
-        "load-more": "Charger plus",
-        "read-more": "En savoir plus",
-        "games": "Jeux",
-        "registration": "Inscription",
-        "regulation": "Règlement",
-        "presentation": "Présentation",
-        "ranking": "Classement",
-        "gallery": "Galerie",
-        "cashprize": "Cashprize",
-        "description": "Organisateur d'événements eSports en Chartreuse depuis 2016."
+            ]
+        }
     }
 }

@@ -1,0 +1,48 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Banner from "@components/Banner.astro"
+import Cashprize from "@components/Cashprize.astro"
+import Translations from "@assets/json/translations.json"
+import AR_Banner from "@assets/img/carousel/alpine-rivals/1.webp"
+import RL_Logo from "@assets/img/games/logo/rocket-league.webp"
+import RL_Banner from "@assets/img/games/banner/rocket-league.webp"
+import type { CashprizeInterface } from "@types"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const cashprize: CashprizeInterface[] = [
+    {
+        game: {
+            name: "Rocket League",
+            logo: RL_Logo,
+            banner: RL_Banner
+        },
+        cash: 200,
+        regulation: "https://drive.google.com/file/d/1Jtf_PDCgH6g9adI4Q-iIH9CZhz5mD3iw/view"
+    }
+]
+---
+
+<Layout title={translation.tournaments.AlpineRivals[1]!.name}>
+    <Banner id="ar-banner" title={translation.tournaments.AlpineRivals[1]!.name} image={AR_Banner} />
+
+    <article id="presentation" class="content">
+        <h2>{translation.presentation}</h2>
+        <p>{translation.tournaments.AlpineRivals[1]!.presentation}</p>
+    </article>
+
+    <Cashprize title={true} data={cashprize} />
+</Layout>
+
+<style lang="scss">
+    #ar-banner {
+        height: 700px;
+
+        &::after {
+            // @include box-shadow(
+            //     inset 0 100px 150px 0 var(--bg-color),
+            //     inset 0 -100px 50px -30px var(--bg-color)
+            // );
+        }
+    }
+</style>

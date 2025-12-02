@@ -1,0 +1,69 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Banner from "@components/Banner.astro"
+import Tournaments from "@components/Tournaments.astro"
+import Translations from "@assets/json/translations.json"
+import CEC_Banner from "@assets/img/carousel/cec/all.webp"
+import CEC1_Thumbnail from "@assets/img/tournaments/cec/1.webp"
+import CEC2_Thumbnail from "@assets/img/tournaments/cec/2.webp"
+import CEC3_Thumbnail from "@assets/img/tournaments/cec/3.webp"
+import CEC4_Thumbnail from "@assets/img/tournaments/cec/4.webp"
+import CEC5_Thumbnail from "@assets/img/tournaments/cec/5.webp"
+import CEC6_Thumbnail from "@assets/img/tournaments/cec/6.webp"
+import type { TournamentsInterface } from "@types"
+
+const locale = Astro.currentLocale ?? "fr"
+const translation = Translations[locale as keyof typeof Translations]
+const tournaments: TournamentsInterface = {
+    title: translation.tournaments.editions,
+    links: [
+        {
+            name: translation.tournaments.CEC[6]!.name,
+            url: "/tournament/CEC/6",
+            thumbnail: CEC6_Thumbnail
+        },
+        {
+            name: translation.tournaments.CEC[5]!.name,
+            url: "/tournament/CEC/5",
+            thumbnail: CEC5_Thumbnail
+        },
+        {
+            name: translation.tournaments.CEC[4]!.name,
+            url: "/tournament/CEC/4",
+            thumbnail: CEC4_Thumbnail
+        },
+        {
+            name: translation.tournaments.CEC[3]!.name,
+            url: "/tournament/CEC/3",
+            thumbnail: CEC3_Thumbnail
+        },
+        {
+            name: translation.tournaments.CEC[2]!.name,
+            url: "/tournament/CEC/2",
+            thumbnail: CEC2_Thumbnail
+        },
+        {
+            name: translation.tournaments.CEC[1]!.name,
+            url: "/tournament/CEC/1",
+            thumbnail: CEC1_Thumbnail
+        }
+    ]
+}
+---
+
+<Layout title={translation.tournaments.CEC[0]!.name}>
+    <Banner title={translation.tournaments.CEC[0]!.name} image={CEC_Banner} />
+
+    <article id="presentation" class="content">
+        <h2>{translation.presentation}</h2>
+        <p>{translation.tournaments.CEC[0]!.presentation}</p>
+    </article>
+
+    <Tournaments data={tournaments} />
+</Layout>
+
+<style lang="scss">
+    #presentation {
+        padding: 0 0 1rem;
+    }
+</style>
